@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 
-import ArtistProfile from '.';
+import FeaturedArtist from '.';
 
 describe('ArtistProfile', () => {
     beforeEach(() => {
-        render(<ArtistProfile />)
+        render(<FeaturedArtist />)
     })
 
     test('renders an article containing a h2, h3 and p', () => {
