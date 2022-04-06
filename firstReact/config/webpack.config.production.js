@@ -1,4 +1,4 @@
-const config = require('.webpack.config.js');
+const config = require('./webpack.config');
 
 config.mode = 'production';
 module.exports = config;
