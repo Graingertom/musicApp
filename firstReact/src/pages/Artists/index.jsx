@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ArtistNames, FeaturedArtist } from "../../components";
+import './style.css';
 
 export function Artists() {
     const [artists, setArtists] = useState([

@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://images.unsplash.com/photo-1587665895622-837f8bbb6b60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
+    background-image: url('https://drive.google.com/uc?export=view&id=1dUD86m2BFFDtJp6htqTr4jqpLi9OnubS');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -13,4 +13,9 @@ h1 {
 p {
     color: whitesmoke;
     text-align: center;
+}
+
+button {
+    cursor: pointer;
+    size: 200px;
 }
