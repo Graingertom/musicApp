@@ -8,8 +8,16 @@
 
 - Successful deployment on Netlify
 - OnClick functionality
+- Created functioning navBar with Router
 
 ## Challenges
 
 - Issues with needing duplicate datasets.
 - Poor understanding of props.
+- App isn't reading Id's from dataset, causing certain functionality to fail across the site.
+
+## Future Features
+
+- Connect to lyric api so users can select songs and see lyrics.
+- Add some styling
+- Create About pages for artists that lead to discographies that lead to song lists, that then display lyrics.
