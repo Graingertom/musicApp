@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://drive.google.com/uc?export=view&id=1dUD86m2BFFDtJp6htqTr4jqpLi9OnubS');
+    background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -18,4 +18,10 @@ p {
 button {
     cursor: pointer;
     size: 200px;
+}
+
+img {
+    align-self: flex-start;
+    max-width: 100%;
+    max-height: 100%;
 }

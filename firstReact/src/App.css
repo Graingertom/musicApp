@@ -4,10 +4,6 @@
     margin: 0;
 }
 
-main {
-    margin: 0;
-}
-
 h1 {
     grid-area: hd;
     font-family: 'Pacifico', cursive;
@@ -26,13 +22,14 @@ li:hover {
 
 .artist-show {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     position: fixed;
+    width: 100%;
     top: 50%;
-    left: 70%;
-    transform: translate(-50%, -70%);
+    left: 50%;
+    transform: translate(-53%, -50%);
 }
 
 nav {

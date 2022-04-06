@@ -16,9 +16,9 @@ export function Artists() {
         };
     return(
         <div className="artist-show">
-            <h1>All the musicians</h1>
 
             <section>
+            <h1>All the musicians</h1>
                 <ArtistNames handleArtistSelect={handleArtistSelect} />
 
                 { chosenArtist && <FeaturedArtist artist={chosenArtist}/> }
