@@ -25,15 +25,24 @@ li:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-53%, -50%);
+    top: 10%;
+}
+
+.artist-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 10%;
+    left: -5%;
 }
 
 nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;

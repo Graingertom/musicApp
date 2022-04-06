@@ -5,7 +5,7 @@ import './style.css';
 export function Home() {
     return (
         <>
-            <div className="artist-show">
+            <div className="artist-home">
                 <div id="imgDisplay">
                 <img src='https://images.unsplash.com/photo-1518296911585-f13a34dee26e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'></img>
                 </div>
