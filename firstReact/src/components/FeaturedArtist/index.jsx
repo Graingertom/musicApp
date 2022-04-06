@@ -1,6 +1,8 @@
 import React from 'react';
+import { SlideShow } from '../Slideshow';
 
 export const FeaturedArtist = ({ artist }) => {
+
     return ( 
         <>
         <article aria-label="featured artist" id="feature">
@@ -13,10 +15,7 @@ export const FeaturedArtist = ({ artist }) => {
             <p>
                 { artist.introduction }
             </p>
-            <ul>
-                <li>{ artist.album[0] }</li>
-                <li>{ artist.album[1] }</li>
-            </ul>
+            <SlideShow artist={artist}/>
             </div>
         </article>
         </>
