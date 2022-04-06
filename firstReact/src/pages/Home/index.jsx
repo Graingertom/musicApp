@@ -1,5 +1,6 @@
 import React from "react";
 import { ArtistsButton } from '../../components'
+import './style.css';
 
 export function Home() {
     return(
