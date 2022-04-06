@@ -35,12 +35,13 @@ export const SlideShow = ({ artist }) => {
   return (
 
         <div className="slideshow">
-          <img className="Imgs" src={albums[index].a.cover} />
-            <h1>{`"${albums[index].a.title}"`}</h1>
+            <h1>Albums</h1>
           <div className="actions">
             <button onClick={prev}>👈</button>
             <button onClick={next}>👉</button>
           </div>
+            <h2>{`"${albums[index].a.title}"`}</h2>
+          <img className="Imgs" src={albums[index].a.cover} />
         </div>
       
   )

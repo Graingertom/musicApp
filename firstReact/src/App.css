@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+.ArtistsButton {
+    size: 100px;
+}
+
 h1 {
     grid-area: hd;
     font-family: 'Pacifico', cursive;
@@ -41,6 +45,23 @@ li:hover {
     left: -5%;
 }
 
+.Imgs {
+    justify-content: center;
+    box-shadow: 5px 5px 15px -4px whitesmoke;
+    border-radius: 20px;
+    margin-bottom: 5vh;
+}
+
+.profile {
+    align-self: center;
+    max-width: 15%;
+    border-radius: 80px;
+}
+
+.slideshow {
+    text-align: center;
+}
+
 nav {
     position: absolute;
     top: 0;
@@ -53,6 +74,15 @@ nav {
 }
 
 nav a {
+    color: whitesmoke;
     display: inline;
     padding: 8px;
+    font-family: 'Pacifico', cursive;
+}
+
+#feature {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
 }
