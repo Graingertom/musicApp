@@ -6,7 +6,7 @@
     "dev": "webpack serve --mode development --config config/webpack.config.dev.js",
     "build": "webpack --config config/webpack.config.production.js",
     "test": "jest --watchAll --setupFilesAfterEnv ./src/test/setupTests.js",
-    "coverage": "jest --setupFilesAfterEnv ./src/test/setupTests.js --coverage --silent --watchAll=false"
+    "coverage": "jest --setupFilesAfterEnv ./src/test/setupTests.js --coverage --watchAll=false"
   },
   "keywords": [],
   "author": "",
@@ -36,14 +36,10 @@
     "react-router-dom": "^6.3.0"
   },
   "jest": {
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "./src/components/*.{js,jsx}"
-    ],
+    "testEnvironment": "jsdom",
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    },
-    "testEnvironment": "jsdom"
+    }
   }
 }
