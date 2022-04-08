@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const ArtistNames = ({ handleArtistSelect, artists }) => {
     const goTo = useNavigate();
+    console.log(artists)
 
     return (
         <ul>
