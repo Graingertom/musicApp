@@ -3,7 +3,7 @@ import { Layout } from './layout';
 import { Routes, Route } from 'react-router-dom';
 import * as Pages from './pages'
 import './App.css'
-import { ArtistNames, FeaturedArtist } from "./components";
+import { ArtistNames, FeaturedArtist, FeaturedAlbum, SlideShow } from "./components";
 
 const App = () => {
     return (
@@ -13,6 +13,11 @@ const App = () => {
                 <Route path="artists" element={<Pages.Artists />} >
                     <Route index element={<ArtistNames />} />
                     <Route path=":artistId" element={<FeaturedArtist />} />
+                </Route>
+                <Route path="albums" element={<Pages.Albums />} >
+                    <Route index element={<ArtistNames />} />
+                    <Route path=":artistId" element={<SlideShow />} />
+                    <Route path=":artistId/:albumId" element={<FeaturedAlbum />} />
                 </Route>
             </Route>
         </Routes>      

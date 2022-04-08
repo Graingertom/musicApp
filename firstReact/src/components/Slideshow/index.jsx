@@ -1,7 +1,9 @@
 import React, { useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export const SlideShow = ({ artist }) => {
+export const SlideShow = ({ artist, handleAlbumSelect }) => {
 
+    const goTo = useNavigate();
     const [index, setIndex] = useState(0)
 
     useEffect(() => {
@@ -23,12 +25,10 @@ export const SlideShow = ({ artist }) => {
         }
       }
 
-      const albums = artist.album.map((a, index) => {
-        return {a}
+      const albums = artist.album.map((alb) => {
+        return {alb}
      }
      )
-     console.log(albums)
-
 
 
 
@@ -40,8 +40,10 @@ export const SlideShow = ({ artist }) => {
             <button onClick={prev}>👈</button>
             <button onClick={next}>👉</button>
           </div>
-            <h2>{`"${albums[index].a.title}"`}</h2>
-          <img className="Imgs" src={albums[index].a.cover} />
+            <h2>{`"${albums[index].alb.title}"`}</h2>
+          <img key={albums[index].alb.id} className="Imgs" src={albums[index].alb.cover} onClick={() =>{
+                    goTo(`${artist.artist}/${albums[index].alb.title}`)
+                    handleAlbumSelect(albums[index].alb.id)}}/>
         </div>
       
   )
