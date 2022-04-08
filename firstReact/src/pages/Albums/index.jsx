@@ -1,33 +1,22 @@
 import React, { useState } from "react";
 import { ArtistNames, SlideShow, FeaturedAlbum } from "../../components";
+import { useParams } from "react-router-dom";
 import { ArtistData } from "../../Data/data";
 
 export function Albums() {
-    const artists = ArtistData
-
-    const [chosenArtist, setChosenArtist] = useState();
+  const artists = ArtistData
+  const urlArtist = useParams();
+  const chosenArtist = artists.find(art => art.artist === urlArtist.artistId);
+  console.log(chosenArtist)
+  
+    const chosenAlbum = chosenArtist.album.find(alb => alb.title === urlArtist.albumId);
+    console.log(chosenAlbum);
     
-    const handleArtistSelect = artistId => {
-        const chosenArtist = artists.find(art => art.id === artistId);
-        setChosenArtist(chosenArtist);
-    };
-
-    const [chosenAlbum, setChosenAlbum] = useState();
-
-    const handleAlbumSelect = albumId => {
-        const chosenAlbum = chosenArtist.album.find(alb => alb.id === albumId);
-        setChosenAlbum(chosenAlbum);
-
-    }
     return (
         <div className="album-show">
 
             <section>
-                <ArtistNames handleArtistSelect={handleArtistSelect} artists={artists} />
-
-                {chosenArtist && <SlideShow handleAlbumSelect={handleAlbumSelect} artist={chosenArtist} />}
-
-                {chosenAlbum && <FeaturedAlbum album={chosenAlbum} />}
+                <FeaturedAlbum album={chosenAlbum} />
             </section>
 
         </div>
