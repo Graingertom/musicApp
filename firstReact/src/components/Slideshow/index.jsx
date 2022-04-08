@@ -42,7 +42,7 @@ export const SlideShow = ({ artist, handleAlbumSelect }) => {
           </div>
             <h2>{`"${albums[index].alb.title}"`}</h2>
           <img key={albums[index].alb.id} className="Imgs" src={albums[index].alb.cover} onClick={() =>{
-                    goTo(`${artist.artist}/${albums[index].alb.title}`)
+                    goTo(`../albums/${artist.artist}/${albums[index].alb.title}`)
                     handleAlbumSelect(albums[index].alb.id)}}/>
         </div>
       
