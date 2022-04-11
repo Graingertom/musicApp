@@ -67,9 +67,9 @@ export function Artists({ token }) {
 
                 {artists && <ArtistNames handleArtistSelect={handleArtistSelect} artists={artists} />}
 
-                {chosenArtist && <FeaturedArtist artist={chosenArtist} />}
+                {chosenArtist && <FeaturedArtist artist={chosenArtist}/>}
 
-                {chosenArtist && <SlideShow artist={chosenArtist} />}
+                {chosenArtist && <SlideShow artist={chosenArtist} token={token} />}
 
             </section>
 
