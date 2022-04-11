@@ -20,6 +20,8 @@
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^14.0.4",
+    "@types/qs": "^6.9.7",
+    "axios": "^0.26.1",
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.4",
     "css-loader": "^6.7.1",
@@ -31,6 +33,9 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "buffer": "^6.0.3",
+    "dotenv": "^16.0.0",
+    "dotenv-webpack": "^7.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0"

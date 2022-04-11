@@ -3,3 +3,4 @@ export { FeaturedArtist } from './FeaturedArtist';
 export { FeaturedAlbum } from './FeaturedAlbum';
 export { ArtistsButton } from './ArtistsButton';
 export { SlideShow } from './Slideshow';
+export { SearchForm } from './SearchForm';

@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArtistData } from '../../Data/data';
 
 export const SlideShow = ({ artist }) => {
   const [chosenAlbum, setChosenAlbum] = useState();
   
-  const artists = ArtistData
   const urlArtist = useParams();
-  const chosenArtist = artists.find(art => art.artist === urlArtist.artistId);
+  const chosenArtist = artist
+
   console.log(chosenArtist)
   
     const handleAlbumSelect = albumId => {
     const chosenAlbum = chosenArtist.album.find(alb => alb.id === albumId);
     setChosenAlbum(chosenAlbum);}
+
+    
 
     const goTo = useNavigate();
     const [index, setIndex] = useState(0)
