@@ -7,6 +7,7 @@ export const FeaturedAlbum = ({ album, albumCovers, trackList }) => {
     const goTo = useNavigate();
     const artist = useParams().artistId;
     const song = useParams().songId;
+    const [ lyrics, setLyrics ] = useState();
     const [chosenTrack, setChosenTrack] = useState();
 
     const handleTrackSelect = trackName => {
@@ -24,7 +25,8 @@ export const FeaturedAlbum = ({ album, albumCovers, trackList }) => {
         console.log(song)
         try {
             let { data } = await axios.get(`https://api.lyrics.ovh/v1/${artist}/${song}`)
-            console.log(data)
+            setLyrics(data.lyrics)
+            console.log(lyrics)
         } catch (err) {
             console.warn(err);
         }
@@ -54,6 +56,9 @@ export const FeaturedAlbum = ({ album, albumCovers, trackList }) => {
                         ))
                     }
                 </ul>
+                <aside>
+                    <p>{lyrics}</p>
+                </aside>
             </article>
         </>
     )
