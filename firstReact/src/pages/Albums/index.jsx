@@ -5,9 +5,9 @@ import { useParams } from "react-router-dom";
 
 export function Albums({ token }) {
     const [chosenAlbum, setChosenAlbum] = useState([]);
-    const [coverImage, setCoverImage ] = useState([])
+    const [coverImage, setCoverImage ] = useState([]);
+    const [ trackList, setTrackList ] = useState([]);
     const albumId = useParams().albumId;
-    console.log(albumId)
 
     useEffect(() => {
     const artistAlbums = async () => {
@@ -22,6 +22,7 @@ export function Albums({ token }) {
             });
             setChosenAlbum(data)
             setCoverImage(data.images[0].url)
+            setTrackList(data.tracks.items)
         } catch (err) {
             console.warn(err);
         }
@@ -35,7 +36,7 @@ export function Albums({ token }) {
         <div className="album-show">
 
             <section>
-                <FeaturedAlbum album={chosenAlbum} albumCovers={albumCovers} />
+                <FeaturedAlbum album={chosenAlbum} albumCovers={albumCovers} trackList={trackList} />
             </section>
 
         </div>

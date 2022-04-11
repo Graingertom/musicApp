@@ -37,14 +37,11 @@ export function Artists({ token }) {
                 "Content-Type": "application/json",
                     }
                 });
-                console.log(data)
                 setArtists(data)
             } catch (err) {
                 console.warn(err);
             }            
         };
-
-    console.log(artists)
 
     const [chosenArtist, setChosenArtist] = useState();
 
