@@ -30,11 +30,9 @@ export const SlideShow = ({ artist, token }) => {
 }, [])
 
   const handleAlbumSelect = albumId => {
-    const chosenAlbum = chosenArtist.album.find(alb => alb.id === albumId);
+    const chosenAlbum = allAlbums.find(alb => alb.id === albumId);
     setChosenAlbum(chosenAlbum);
   }
-
-
 
   const goTo = useNavigate();
   const [index, setIndex] = useState(0)
@@ -72,7 +70,7 @@ export const SlideShow = ({ artist, token }) => {
           <div key={index}>
             <h2>{`"${album.name}"`}</h2>
             <img key={album.id} className="Imgs" src={album.images[0].url} onClick={() => {
-              goTo(`../albums/${artist.name}/${album.name}`)
+              goTo(`../albums/${artist.name}/${album.id}`)
               handleAlbumSelect(album.id)
             }} />
           </div>

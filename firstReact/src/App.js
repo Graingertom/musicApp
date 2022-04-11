@@ -38,7 +38,7 @@ const App = () => {
                     <Route index element={<ArtistNames />} />
                     <Route path=":artistId" element={<FeaturedArtist />} />
                 </Route>
-                <Route path="albums/:artistId/:albumId" element={<Pages.Albums />} >
+                <Route path="albums/:artistId/:albumId" element={<Pages.Albums token={getAuth} />} >
                     <Route index element={<FeaturedAlbum />} />
                 </Route>
             </Route>

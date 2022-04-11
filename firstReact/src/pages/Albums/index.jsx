@@ -1,22 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ArtistNames, SlideShow, FeaturedAlbum } from "../../components";
+import axios from "axios";
 import { useParams } from "react-router-dom";
-import { ArtistData } from "../../Data/data";
 
-export function Albums() {
-  const artists = ArtistData
-  const urlArtist = useParams();
-  const chosenArtist = artists.find(art => art.artist === urlArtist.artistId);
-  console.log(chosenArtist)
-  
-    const chosenAlbum = chosenArtist.album.find(alb => alb.title === urlArtist.albumId);
-    console.log(chosenAlbum);
+export function Albums({ token }) {
+    const [chosenAlbum, setChosenAlbum] = useState([]);
+    const [coverImage, setCoverImage ] = useState([])
+    const albumId = useParams().albumId;
+    console.log(albumId)
+
+    useEffect(() => {
+    const artistAlbums = async () => {
+    const access_token = await token();
+        try {
+            let { data } = await axios.get(`https://api.spotify.com/v1/albums/${albumId}`, {
+                headers: {
+                    "Authorization": `Bearer ${access_token}`,
+                    "Accept": "application/json",
+                    "Content-Type": "application/json",
+                }
+            });
+            setChosenAlbum(data)
+            setCoverImage(data.images[0].url)
+        } catch (err) {
+            console.warn(err);
+        }
+    }
+    artistAlbums()
+}, [])
+
+    let albumCovers = coverImage
     
     return (
         <div className="album-show">
 
             <section>
-                <FeaturedAlbum album={chosenAlbum} />
+                <FeaturedAlbum album={chosenAlbum} albumCovers={albumCovers} />
             </section>
 
         </div>
