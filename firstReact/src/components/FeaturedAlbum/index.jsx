@@ -1,36 +1,38 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export const FeaturedAlbum = ({ album, albumCovers, trackList }) => {
 
+    const goTo = useNavigate();
     const artist = useParams().artistId;
+    const song = useParams().songId;
     const [chosenTrack, setChosenTrack] = useState();
-    const [ trackName, setTrackName ] = useState();
 
-    const trackNameSelect = (trackName) => {
-        setTrackName(trackName)}
-
-    useEffect(() => {
+    const handleTrackSelect = trackName => {
         try {
             const chosenTrack = trackList.find(track => track.name === trackName);
-            setChosenTrack(chosenTrack.name)    
+            setChosenTrack(chosenTrack.name)   
         } catch (err) {
             console.log(err)
         }
-},
-[trackName])
+    }
 
 
 
     const getLyrics = async () => {
+        console.log(song)
         try {
-            let { data } = await axios.get(`https://api.lyrics.ovh/v1/${artist}/${chosenTrack}`)
+            let { data } = await axios.get(`https://api.lyrics.ovh/v1/${artist}/${song}`)
             console.log(data)
         } catch (err) {
             console.warn(err);
         }
     }
+
+    useEffect(() => {
+        getLyrics();
+    }, [song])
     
 
     return (
@@ -42,7 +44,7 @@ export const FeaturedAlbum = ({ album, albumCovers, trackList }) => {
                     {
                         trackList.map(track => (
                             <li key={track.id} onClick={() => {
-                                trackNameSelect(track.name); getLyrics()
+                                handleTrackSelect(track.name); goTo(`./${track.name}`);
                             }}>
                                 <strong
                                     role="heading"

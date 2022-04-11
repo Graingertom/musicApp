@@ -40,6 +40,7 @@ const App = () => {
                 </Route>
                 <Route path="albums/:artistId/:albumId" element={<Pages.Albums token={getAuth} />} >
                     <Route index element={<FeaturedAlbum />} />
+                    <Route path=":songId" element={<FeaturedAlbum />} />
                 </Route>
             </Route>
         </Routes>
